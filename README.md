@@ -4,11 +4,11 @@
 
 Reveal is a social media site built especially for local burlesque communities. Burlesque performers and event organizers rely on social media for promotion and engagement, but there are several problems with the existing mainstream platforms:
 
-1. Over-moderation: Users are often shadowbanned or suspended for posting risqué content, even when that content is not explicit and is within the platform's TOS.
+**1. Over-moderation:** Users are often shadowbanned or suspended for posting risqué content, even when that content is not explicit and is within the platform's TOS.
 
-2. Fragmentation: Performers and organizers must use several different social media sites for promotion. This can be difficult to manage.
+**2. Fragmentation:** Performers and organizers must use several different social media sites for promotion. This can be difficult to manage.
 
-3. Poor discoverability: Existing search functionalities are lacking, making it a challenge to find local events. Some communities have resorted to keeping a plain text Google Doc of all upcoming shows in their area. Not only must these lists be manually maintained, they are not visually appealing and do little to encourage ticket sales.
+**3. Poor discoverability:** Existing search functionalities are lacking, making it a challenge to find local events. Some communities have resorted to keeping a plain text Google Doc of all upcoming shows in their area. Not only must these lists be manually maintained, they are not visually appealing and do little to encourage ticket sales.
 
 Reveal aims to address these pain points by providing a network specifically designed for the burlesque world.
 
@@ -18,10 +18,10 @@ Burlesque performers of all experience levels may be Reveal's most important use
 
 ## User Stories
 
-- As a site visitor, I can see a list of all upcoming shows in my area, and click on one to view its full details, so that I can find events to go to.
-- As a burlesque performer, I can promote myself and my upcoming shows via both my profile page and posts, so that I can grow my audience.
-- As a burlesque fan, I can easily see all of my favourite performers' media on their profle page, so that I don't have to dig through YouTube, Instagram, or TikTok to search for them individually.
-- As a producer or venue owner, I can organize and promote upcoming events to an interested target audience so that I can sell more tickets.
+- _As a site visitor, I can see a list of all upcoming shows in my area, and click on one to view its full details, so that I can find events to go to._
+- _As a burlesque performer, I can promote myself and my upcoming shows via both my profile page and posts, so that I can grow my audience._
+- _As a burlesque fan, I can easily see all of my favourite performers' media on their profle page, so that I don't have to dig through YouTube, Instagram, or TikTok to search for them individually._
+- _As a producer or venue owner, I can organize and promote upcoming events to an interested target audience so that I can sell more tickets._
 
 ## Features
 
@@ -50,17 +50,15 @@ Burlesque performers of all experience levels may be Reveal's most important use
 
 ### Sitemap
 
-- See development/sitemap.png
-  ![sitemap](https://github.com/jacquikeating/reveal/blob/develop/development/sitemap.png?raw=true)
+![sitemap](https://github.com/jacquikeating/reveal/blob/develop/development/sitemap.png?raw=true)
 
 ### Mockups
 
-- See development/mockups/
+- See https://github.com/jacquikeating/reveal/tree/develop/development/mockups
 
 ### Data
 
-- See development/data-diagram.png
-  ![data diagram](https://raw.githubusercontent.com/jacquikeating/reveal/develop/development/data-diagram.png)
+![data diagram](https://raw.githubusercontent.com/jacquikeating/reveal/develop/development/data-diagram.png)
 
 ### Endpoints
 
