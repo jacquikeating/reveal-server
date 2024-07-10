@@ -41,12 +41,12 @@ const dummyUsersData = [
 ];
 
 router
-  .get("/", (req, res) => {
+  .get("/", (_req, res) => {
     res.send(dummyUsersData);
   })
   .get("/:userID", (req, res) => {
-    const params = req.params.userID;
-    res.send(dummyUsersData[params]);
+    const { userID } = req.params;
+    res.send(dummyUsersData[userID]);
   });
 
 export default router;

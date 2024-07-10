@@ -25,12 +25,12 @@ const dummyPostsData = [
 ];
 
 router
-  .get("/", (req, res) => {
+  .get("/", (_req, res) => {
     res.send(dummyPostsData);
   })
   .get("/:postID", (req, res) => {
-    const params = req.params.postID;
-    res.send(dummyPostsData[params]);
+    const { postID } = req.params;
+    res.send(dummyPostsData[postID]);
   });
 
 export default router;

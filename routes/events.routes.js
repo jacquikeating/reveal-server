@@ -20,12 +20,12 @@ const dummyEventsData = [
 ];
 
 router
-  .get("/", (req, res) => {
+  .get("/", (_req, res) => {
     res.send(dummyEventsData);
   })
   .get("/:eventID", (req, res) => {
-    const params = req.params.eventID;
-    res.send(dummyEventsData[params]);
+    const { eventID } = req.params;
+    res.send(dummyEventsData[eventID]);
   });
 
 export default router;
