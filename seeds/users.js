@@ -17,6 +17,7 @@ export async function seed(knex) {
       cover_photo:
         "https://reveal-images.s3.us-east-2.amazonaws.com/velvetvixen-1.jpg",
       bio: "Velvet Vixen, known for her sultry and mesmerizing performances, combines classic burlesque with a modern twist. Her shows are a perfect blend of glamour and tease, making her a favorite on the burlesque circuit. With a background in ballet, she brings grace and precision to her every move.",
+      events: JSON.stringify([1, 2, 3]),
     },
     {
       id: 2,

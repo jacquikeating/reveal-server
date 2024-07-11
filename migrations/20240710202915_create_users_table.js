@@ -7,7 +7,8 @@ export function up(knex) {
     table.string("home_city");
     table.string("avatar");
     table.string("cover_photo");
-    table.string("bio", [TEXT]);
+    table.string("bio");
+    table.JSON("events");
     // need to add arrays for events, gallery, posts
     // JSON.stringify()?
   });
