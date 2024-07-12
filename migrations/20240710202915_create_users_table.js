@@ -9,6 +9,7 @@ export function up(knex) {
     table.string("cover_photo");
     table.string("bio");
     table.JSON("events");
+    table.JSON("gallery");
     // need to add arrays for events, gallery, posts
     // JSON.stringify()?
   });

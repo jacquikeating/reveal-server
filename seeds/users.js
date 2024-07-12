@@ -13,23 +13,31 @@ export async function seed(knex) {
       password: "vv",
       home_city: "Toronto",
       avatar:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/avatar-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/velvetvixen-2.jpg",
       cover_photo:
         "https://reveal-images.s3.us-east-2.amazonaws.com/velvetvixen-1.jpg",
       bio: "Velvet Vixen, known for her sultry and mesmerizing performances, combines classic burlesque with a modern twist. Her shows are a perfect blend of glamour and tease, making her a favorite on the burlesque circuit. With a background in ballet, she brings grace and precision to her every move.",
       events: JSON.stringify([1, 2, 3]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/velvetvixen-2.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/velvetvixen-1.jpg",
+      ]),
     },
     {
       id: 2,
-      name: "Mister Midnight",
-      email: "mm@fake-email.com",
-      password: "mm",
+      name: "Aurora Glitter",
+      email: "someuser@fake-email.com",
+      password: "password",
       home_city: "Toronto",
       avatar:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/avatar-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/auroraglitter-main.jpg",
       cover_photo:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/image-placeholder.png",
-      bio: "Mister Midnight captivates audiences with his dark, mysterious, and often comedic performances. As a boylesque performer, he challenges traditional gender norms, combining elegance with a rugged charm. His routines often feature elaborate costumes and a touch of gothic flair.",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/auroraglitter-main.jpg",
+      bio: "Aurora Glitter is a radiant performer whose acts are a celebration of all things sparkly and fabulous. With her shimmering costumes and dazzling stage presence, Aurora brings a touch of magic to every performance. She is known for her elaborate choreography and uplifting messages of self-love and acceptance.",
+      events: JSON.stringify([4, 5]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/auroraglitter-main.jpg",
+      ]),
     },
     {
       id: 3,
@@ -38,10 +46,14 @@ export async function seed(knex) {
       password: "jj",
       home_city: "Toronto",
       avatar:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/avatar-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/jasperjinx-main.jpg",
       cover_photo:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/image-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/jasperjinx-main.jpg",
       bio: "Jasper Jinx is a boylesque performer known for his playful and energetic style. He incorporates elements of acrobatics and comedy into his acts, making every performance a dynamic and unforgettable experience. Jasper's infectious energy and charisma make him a standout on any stage.",
+      events: JSON.stringify([3, 1]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/jasperjinx-main.jpg",
+      ]),
     },
     {
       id: 4,
@@ -50,10 +62,16 @@ export async function seed(knex) {
       password: "ss",
       home_city: "Toronto",
       avatar:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/avatar-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/scarletsiren-main.jpg",
       cover_photo:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/image-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/scarletsiren-2.jpg",
       bio: "Scarlet Siren is renowned for her sensual and seductive burlesque routines. Her performances are a celebration of femininity and empowerment, often featuring lavish costumes and provocative themes. Scarlet's magnetic presence and sultry moves leave a lasting impression on her audience.",
+      events: JSON.stringify([2, 3]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/scarletsiren-main.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/scarletsiren-1.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/scarletsiren-2.jpg",
+      ]),
     },
     {
       id: 5,
@@ -62,22 +80,31 @@ export async function seed(knex) {
       password: "pn",
       home_city: "Toronto",
       avatar:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/avatar-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/pearlnoir-main.jpg",
       cover_photo:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/image-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/pearlnoir-main.jpg",
       bio: "Pearl Noir is a burlesque performer who exudes elegance and sophistication. Her performances are a tribute to the golden age of burlesque, featuring glamorous costumes and classic striptease routines. Pearl's timeless beauty and graceful movements make her a beloved figure in the burlesque community.",
+      events: JSON.stringify([1]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/pearlnoir-main.jpg",
+      ]),
     },
     {
       id: 6,
-      name: "Duke DeLuxe",
-      email: "dd@fake-email.com",
-      password: "dd",
+      name: "Dandy D'Light",
+      email: "ddl@fake-email.com",
+      password: "ddl",
       home_city: "Toronto",
       avatar:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/avatar-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/dandydlight-main.jpg",
       cover_photo:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/image-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/dandydlight-main.jpg",
       bio: "Duke DeLuxe is a boylesque performer with a flair for the dramatic. His shows are a blend of theatricality and sensuality, often incorporating elaborate props and storylines. Duke's commanding stage presence and creative vision set him apart as a true showman.",
+      events: JSON.stringify([2, 4]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/dandydlight-main.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/dandydlight-1.jpg",
+      ]),
     },
     {
       id: 7,
@@ -86,10 +113,153 @@ export async function seed(knex) {
       password: "ie",
       home_city: "Toronto",
       avatar:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/avatar-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/ivoryempress-main.jpg",
       cover_photo:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/image-placeholder.png",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/ivoryempress-1.jpg",
       bio: "Ivory Empress is known for her ethereal and enchanting burlesque performances. Her routines often draw inspiration from fairy tales and fantasy, featuring whimsical costumes and magical themes. Ivory's delicate beauty and imaginative acts transport her audience to a world of enchantment.",
+      events: JSON.stringify([1, 2, 3]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/ivoryempress-main.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/ivoryempress-1.jpg",
+      ]),
+    },
+    {
+      id: 8,
+      name: "Sir Silhouette",
+      email: "someuser@fake-email.com",
+      password: "password",
+      home_city: "Toronto",
+      avatar:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/sirsilhouette-main.jpg",
+      cover_photo:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/sirsilhouette-main.jpg",
+      bio: "Sir Silhouette is a master of boylesque with a focus on shadow play and illusion. His performances are characterized by their artistic and often abstract nature, using light and shadow to create mesmerizing visual effects. Sir Silhouette's unique approach to boylesque makes him a captivating and innovative performer.",
+      events: JSON.stringify([5, 3]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/NAME-main.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/NAME-1.jpg",
+      ]),
+    },
+    {
+      id: 9,
+      name: "Gigi Oui-Oui",
+      email: "someuser@fake-email.com",
+      password: "password",
+      home_city: "Toronto",
+      avatar:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/gigiouioui-main.jpg",
+      cover_photo:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/gigiouioui-main.jpg",
+      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices nec augue sed varius. Etiam id ullamcorper erat, eu sodales mauris. Nullam bibendum dui at tellus lobortis molestie sit amet ac ante. Nunc posuere ut turpis id posuere. Proin vulputate sollicitudin dui vitae tempus. Ut vestibulum vehicula nunc nec iaculis. Aenean sollicitudin lectus ac dolor fringilla aliquet. Suspendisse ac lacinia nulla. Pellentesque sed elit mollis, euismod purus in, ultrices justo.",
+      events: JSON.stringify([6, 2]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/gigiouioui-main.jpg",
+      ]),
+    },
+    {
+      id: 10,
+      name: "Blaze Infierno",
+      email: "someuser@fake-email.com",
+      password: "password",
+      home_city: "Toronto",
+      avatar:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/blazeinferno-main.jpg",
+      cover_photo:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/NAME-main.jpg",
+      bio: "Blaze Infierno is a fiery performer known for their explosive acts that combine pyrotechnics with high-energy dance routines. With their flame-colored hair and daring costumes, Blaze's shows are a spectacle of light and heat. They are a proud advocate for LGBTQ+ rights, often incorporating messages of empowerment and resilience into their performances.",
+      events: JSON.stringify([3, 4]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/blazeinferno-main.jpg",
+      ]),
+    },
+    {
+      id: 11,
+      name: "Lola Lush",
+      email: "someuser@fake-email.com",
+      password: "password",
+      home_city: "Toronto",
+      avatar:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/lolalush-main.jpg",
+      cover_photo:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/lolalush-main.jpg",
+      bio: "Lola Lush is a voluptuous vixen who embraces her curves and oozes confidence on stage. Her acts are a celebration of body positivity and self-love, often featuring vintage pin-up style and glamorous old Hollywood flair. Lola's routines are filled with humor, sass, and a whole lot of heart.",
+      events: JSON.stringify([1, 3, 6]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/lolalush-main.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/lolalush-1.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/lolalush-2.jpg",
+      ]),
+    },
+    {
+      id: 12,
+      name: "Rocco Ravish",
+      email: "someuser@fake-email.com",
+      password: "password",
+      home_city: "Toronto",
+      avatar:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/roccoravish-main.jpg",
+      cover_photo:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/roccoravish-main.jpg",
+      bio: "Rocco Ravish is a bad boy with a heart of gold, known for his edgy and provocative performances. He combines elements of rock 'n' roll and punk with classic burlesque, creating a unique and captivating style. Rocco's acts often challenge traditional gender roles, embracing fluidity and self-expression.",
+      events: JSON.stringify([]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/roccoravish-main.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/roccoravish-1.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/roccoravish-2.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/roccoravish-3.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/roccoravish-4.jpg",
+      ]),
+    },
+    {
+      id: 13,
+      name: "Queerly Beloved",
+      email: "someuser@fake-email.com",
+      password: "password",
+      home_city: "Toronto",
+      avatar:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/queerlybeloved-main.jpg",
+      cover_photo:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/queerlybeloved-main.jpg",
+      bio: "Queerly Beloved is a performer who brings a message of love and acceptance to the burlesque stage. Their acts are a celebration of diversity and inclusivity, often featuring a mix of dance, spoken word, and visual art. With their radiant smile and powerful stage presence, Queerly Beloved inspires their audience to embrace their true selves.",
+      events: JSON.stringify([1, 3, 5, 6]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/queerlybeloved-main.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/queerlybeloved-1.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/queerlybeloved-2.jpg",
+      ]),
+    },
+    {
+      id: 14,
+      name: "Gigi Deluxe",
+      email: "someuser@fake-email.com",
+      password: "password",
+      home_city: "Toronto",
+      avatar:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/gigideluxe-main.jpg",
+      cover_photo:
+        "https://reveal-images.s3.us-east-2.amazonaws.com/gigideluxe-main.jpg",
+      bio: "Gigi Deluxe is the epitome of classic burlesque glamour. With her stunning red lips and dazzling costumes, she transports her audience to a bygone era of glitz and sophistication. Gigi's performances are known for their intricate choreography and theatrical storytelling.",
+      events: JSON.stringify([]),
+      gallery: JSON.stringify([
+        "https://reveal-images.s3.us-east-2.amazonaws.com/gigideluxe-main.jpg",
+        "https://reveal-images.s3.us-east-2.amazonaws.com/gigideluxe-1.jpg",
+      ]),
     },
   ]);
 }
+
+/* COPY ME
+    {
+      id: ,
+      name: "",
+      email: "someuser@fake-email.com",
+      password: "password",
+      home_city: "Toronto",
+      avatar: "https://reveal-images.s3.us-east-2.amazonaws.com/NAME-main.jpg",
+      cover_photo: "https://reveal-images.s3.us-east-2.amazonaws.com/NAME-main.jpg",
+      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices nec augue sed varius. Etiam id ullamcorper erat, eu sodales mauris. Nullam bibendum dui at tellus lobortis molestie sit amet ac ante. Nunc posuere ut turpis id posuere. Proin vulputate sollicitudin dui vitae tempus. Ut vestibulum vehicula nunc nec iaculis. Aenean sollicitudin lectus ac dolor fringilla aliquet. Suspendisse ac lacinia nulla. Pellentesque sed elit mollis, euismod purus in, ultrices justo.",
+      events: JSON.stringify([]),
+      gallery: JSON.stringify(["https://reveal-images.s3.us-east-2.amazonaws.com/NAME-main.jpg", "https://reveal-images.s3.us-east-2.amazonaws.com/NAME-1.jpg"])
+    },
+
+    */

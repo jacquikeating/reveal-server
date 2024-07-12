@@ -27,9 +27,9 @@ router.get("/", async (_req, res) => {
 router.get("/:eventID", async (req, res) => {
   try {
     const { eventID } = req.params;
-    const userData = await db("users").where({ id: eventID }).first();
-    if (userData) {
-      res.status(200).json(userData);
+    const eventData = await db("events").where({ id: eventID }).first();
+    if (eventData) {
+      res.status(200).json(eventData);
     } else {
       res.status(404).json({
         error_code: 404,
