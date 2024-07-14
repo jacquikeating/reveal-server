@@ -1,8 +1,8 @@
 export function up(knex) {
   return knex.schema.createTable("venues", (table) => {
     table.increments("id").primary();
-    table.string("venue_name").notNullable();
-    table.string("venue_address").notNullable();
+    table.string("name").notNullable();
+    table.string("address").notNullable();
     table.integer("city_id").unsigned().notNullable();
     table.JSON("events").defaultTo({});
     table.JSON("posts").defaultTo({});

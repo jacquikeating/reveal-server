@@ -9,7 +9,8 @@ router.get("/", async (_req, res) => {
   try {
     const venues = await db("venues").select(
       "id",
-      "venue_name",
+      "name",
+      "address",
       "city_id",
       "events"
     );

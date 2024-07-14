@@ -7,12 +7,7 @@ const db = knex(config);
 // GET list of all cities with limited data
 router.get("/", async (_req, res) => {
   try {
-    const cities = await db("cities").select(
-      "id",
-      "city_name",
-      "events",
-      "venues"
-    );
+    const cities = await db("cities").select("id", "name", "events", "venues");
     res.status(200).json(cities);
   } catch (err) {
     console.error(err);
