@@ -11,14 +11,14 @@ export async function seed(knex) {
       user_name: "X",
       content: "Lorem ipsum",
       likes: 0,
-      timestamp: knex.fn.now(),
+      timestamp: new Date().getTime(),
     },
     {
       user_id: 2,
       user_name: "Y",
       content: "Iprem lorsum",
       likes: 0,
-      timestamp: knex.fn.now(),
+      timestamp: new Date().getTime(),
     },
   ]);
 }
