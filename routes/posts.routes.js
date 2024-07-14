@@ -1,36 +1,49 @@
 import express from "express";
+import knex from "knex";
+import config from "../knexfile.js";
 const router = express.Router();
+const db = knex(config);
 
-const dummyPostsData = [
-  {
-    id: 1,
-    username: "Scarlet Siren",
-    avatar: "../src/assets/icons/avatar-placeholder.png",
-    timestamp: new Date().toLocaleDateString("en-US"),
-    content:
-      "I'm the hottest post on this site! (Mostly because I'm the first post.)",
-    likes: 0,
-    comments: [],
-  },
-  {
-    id: 2,
-    username: "Test User",
-    avatar: "../src/assets/icons/avatar-placeholder.png",
-    timestamp: new Date().toLocaleDateString("en-US"),
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eos inventore natus corrupti.",
-    likes: 0,
-    comments: [],
-  },
-];
+router.get("/", async (_req, res) => {
+  try {
+    const posts = await db("posts").select(
+      "id",
+      "user_id",
+      "user_name",
+      "timestamp",
+      "content",
+      "likes",
+      "hashtags",
+      "comments"
+    );
+    res.status(200).json(posts);
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({ error_code: 500, error_msg: "Failed to GET posts list." });
+  }
+});
 
-router
-  .get("/", (_req, res) => {
-    res.send(dummyPostsData);
-  })
-  .get("/:postID", (req, res) => {
+router.get("/:postID", async (req, res) => {
+  try {
     const { postID } = req.params;
-    res.send(dummyPostsData[postID]);
-  });
+    const postData = await db("posts").where({ id: postID }).first();
+    if (eventData) {
+      res.status(200).json(postData);
+    } else {
+      res.status(404).json({
+        error_code: 404,
+        error_msg: `Post with id ${postID} not found.`,
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error_code: 500,
+      error_msg: `Failed to GET post with id ${postID}.`,
+    });
+  }
+});
 
 export default router;

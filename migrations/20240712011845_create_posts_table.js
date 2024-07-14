@@ -1,13 +1,19 @@
 export function up(knex) {
   return knex.schema.createTable("posts", (table) => {
     table.increments("id").primary();
-    table.string("user_id").notNullable();
+    table.integer("user_id").unsigned().notNullable();
     table.string("user_name").notNullable();
-    table.string("timestamp").notNullable();
+    table.timestamp("timestamp").defaultTo(knex.fn.now());
     table.string("content").notNullable();
-    table.string("likes");
+    table.integer("likes");
     table.JSON("hashtags");
-    table.JSON("comments");
+    table.JSON("comments").defaultTo([]);
+    table
+      .foreign("user_id")
+      .references("id")
+      .inTable("users")
+      .onUpdate("CASCADE")
+      .onDelete("CASCADE");
   });
 }
 
