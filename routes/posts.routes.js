@@ -5,6 +5,7 @@ const router = express.Router();
 const db = knex(config);
 import { body, validationResult } from "express-validator";
 
+// GET all posts
 router.get("/", async (_req, res) => {
   try {
     const posts = await db("posts").select(
@@ -27,11 +28,12 @@ router.get("/", async (_req, res) => {
   }
 });
 
+// GET one specific post
 router.get("/:postID", async (req, res) => {
   try {
     const { postID } = req.params;
     const postData = await db("posts").where({ id: postID }).first();
-    if (eventData) {
+    if (postData) {
       res.status(200).json(postData);
     } else {
       res.status(404).json({
@@ -48,6 +50,30 @@ router.get("/:postID", async (req, res) => {
   }
 });
 
+// GET all posts by a specific user
+router.get("/by-user/:userID", async (req, res) => {
+  try {
+    const { userID } = req.params;
+    console.log(userID);
+    const postData = await db("posts").where({ user_id: userID });
+    if (postData) {
+      res.status(200).json(postData);
+    } else {
+      res.status(404).json({
+        error_code: 404,
+        error_msg: `Post with those parameters not found.`,
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error_code: 500,
+      error_msg: `Failed to GET posts.`,
+    });
+  }
+});
+
+// POST a new post
 router.post("/", [body("content").notEmpty().escape()], async (req, res) => {
   try {
     const newPost = req.body;
