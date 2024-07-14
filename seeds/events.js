@@ -189,7 +189,7 @@ export async function seed(knex) {
       description:
         "The Sugar Shack is back at Junction Underground. Join us for an energetic, warm, friendly and inclusive show in an intimate venue. Join us for a fun and flirty evening of burlesque in this intimate venue. The performances will showcase the breadth of the burlesque artform from classic to comedy and everything in-between.",
       venue: "Junction [City] Underground",
-      venue_address: "2907 Dundas W",
+      venue_address: "2907 Dundas Street W",
       doors_time: "8:00 PM",
       start_time: "9:00 PM",
       organizer: "Sugar Holiday",
