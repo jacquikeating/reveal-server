@@ -54,7 +54,6 @@ router.get("/:postID", async (req, res) => {
 router.get("/by-user/:userID", async (req, res) => {
   try {
     const { userID } = req.params;
-    console.log(userID);
     const postData = await db("posts").where({ user_id: userID });
     if (postData) {
       res.status(200).json(postData);
@@ -77,7 +76,6 @@ router.get("/by-user/:userID", async (req, res) => {
 router.post("/", [body("content").notEmpty().escape()], async (req, res) => {
   try {
     const newPost = req.body;
-    console.log(newPost);
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
