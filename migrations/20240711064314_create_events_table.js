@@ -16,8 +16,6 @@ export function up(knex) {
     table.JSON("ticket_prices").notNullable();
     table.JSON("performers").notNullable();
     table.JSON("buy_tickets");
-    // need to add arrays for performers, gallery, posts
-    // JSON.stringify()?
   });
 }
 

@@ -3,7 +3,6 @@
  * @returns { Promise<void> }
  */
 export async function seed(knex) {
-  // Deletes ALL existing entries
   await knex("events").delete();
   await knex("events").insert([
     {
@@ -202,27 +201,3 @@ export async function seed(knex) {
     },
   ]);
 }
-
-/* COPY ME
- {
-      id: ,
-      name: "", 
-      city: "Toronto",
-      month: "July",
-      day: "",
-      main_image: "https://reveal-images.s3.us-east-2.amazonaws.com/e1.jpg",
-      description:
-        "",
-      venue: "",
-      venue_address: "",
-      doors_time: ":00 PM",
-      start_time: ":00 PM",
-      end_time: ":00 PM",
-      producer: "",
-      ticket_prices: JSON.stringify({  }),
-      performers: JSON.stringify([]),
-      buy_tickets: "",
-      gallery: JSON.stringify([]),
-      posts: JSON.stringify([]),
-    },
-    */

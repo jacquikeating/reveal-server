@@ -3,7 +3,6 @@
  * @returns { Promise<void> }
  */
 export async function seed(knex) {
-  // Deletes ALL existing entries
   await knex("users").del();
   await knex("users").insert([
     {
@@ -165,7 +164,7 @@ export async function seed(knex) {
         "https://reveal-images.s3.us-east-2.amazonaws.com/blazeinferno-main.jpg",
       cover_photo:
         "https://reveal-images.s3.us-east-2.amazonaws.com/blazeinferno-main.jpg",
-      bio: "Blaze Infierno is a fiery performer known for their explosive acts that combine pyrotechnics with high-energy dance routines. With their flame-colored hair and daring costumes, Blaze's shows are a spectacle of light and heat. They are a proud advocate for LGBTQ+ rights, often incorporating messages of empowerment and resilience into their performances.",
+      bio: "Blaze Infierno is a fiery performer known for their explosive acts that combine pyrotechnics with high-energy dance routines. With smouldering good looks and daring costumes, Blaze's shows are a spectacle of light and heat. They are a proud advocate for LGBTQ+ rights, often incorporating messages of empowerment and resilience into their performances.",
       events: JSON.stringify([3, 4]),
       gallery: JSON.stringify([
         "https://reveal-images.s3.us-east-2.amazonaws.com/blazeinferno-main.jpg",
@@ -177,8 +176,7 @@ export async function seed(knex) {
       email: "someuser@fake-email.com",
       password: "password",
       home_city: "Toronto",
-      avatar:
-        "https://reveal-images.s3.us-east-2.amazonaws.com/lolalush-main.jpg",
+      avatar: "https://reveal-images.s3.us-east-2.amazonaws.com/lolalush-1.jpg",
       cover_photo:
         "https://reveal-images.s3.us-east-2.amazonaws.com/lolalush-main.jpg",
       bio: "Lola Lush is a voluptuous vixen who embraces her curves and oozes confidence on stage. Her acts are a celebration of body positivity and self-love, often featuring vintage pin-up style and glamorous old Hollywood flair. Lola's routines are filled with humor, sass, and a whole lot of heart.",
@@ -247,19 +245,3 @@ export async function seed(knex) {
     },
   ]);
 }
-
-/* COPY ME
-    {
-      id: ,
-      name: "",
-      email: "someuser@fake-email.com",
-      password: "password",
-      home_city: "Toronto",
-      avatar: "https://reveal-images.s3.us-east-2.amazonaws.com/NAME-main.jpg",
-      cover_photo: "https://reveal-images.s3.us-east-2.amazonaws.com/NAME-main.jpg",
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices nec augue sed varius. Etiam id ullamcorper erat, eu sodales mauris. Nullam bibendum dui at tellus lobortis molestie sit amet ac ante. Nunc posuere ut turpis id posuere. Proin vulputate sollicitudin dui vitae tempus. Ut vestibulum vehicula nunc nec iaculis. Aenean sollicitudin lectus ac dolor fringilla aliquet. Suspendisse ac lacinia nulla. Pellentesque sed elit mollis, euismod purus in, ultrices justo.",
-      events: JSON.stringify([]),
-      gallery: JSON.stringify(["https://reveal-images.s3.us-east-2.amazonaws.com/NAME-main.jpg", "https://reveal-images.s3.us-east-2.amazonaws.com/NAME-1.jpg"])
-    },
-
-    */

@@ -7,7 +7,7 @@ import { body, validationResult } from "express-validator";
 
 function printErrors(errors) {
   const errorPaths = errors.map((error) => {
-    return error.path.replace(/\_/g, " "); // replace underscores with spaces
+    return error.path.replace(/\_/g, " ");
   });
   let noDuplicateErrors = [...new Set(errorPaths)];
   if (noDuplicateErrors.length === 1) {

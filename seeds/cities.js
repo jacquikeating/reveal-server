@@ -3,7 +3,6 @@
  * @returns { Promise<void> }
  */
 export async function seed(knex) {
-  // Deletes ALL existing entries
   await knex("cities").delete();
   await knex("cities").insert([
     {
@@ -26,12 +25,3 @@ export async function seed(knex) {
     },
   ]);
 }
-
-/* COPY ME
- {
-      id: ,
-      name: "",
-      events: JSON.stringify([]),
-      venues: JSON.stringify([]),
-  },
-*/
