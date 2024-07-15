@@ -5,6 +5,20 @@ const router = express.Router();
 const db = knex(config);
 import { body, validationResult } from "express-validator";
 
+function printErrors(errors) {
+  const errorPaths = errors.map((error) => {
+    return error.path.replace(/\_/g, " "); // replace underscores with spaces
+  });
+  let noDuplicateErrors = [...new Set(errorPaths)];
+  if (noDuplicateErrors.length === 1) {
+    return `Unable to complete your request due to invalid data in the ${noDuplicateErrors[0]} field. Please confirm your entry is correct and try again.`;
+  } else {
+    return `Unable to complete your request due to invalid data in the following fields: ${noDuplicateErrors.join(
+      ", "
+    )}. Please confirm your entries are correct and try again.`;
+  }
+}
+
 // GET all posts
 router.get("/", async (_req, res) => {
   try {
@@ -101,18 +115,45 @@ router.post("/", [body("content").notEmpty().escape()], async (req, res) => {
   }
 });
 
-function printErrors(errors) {
-  const errorPaths = errors.map((error) => {
-    return error.path.replace(/\_/g, " "); // replace underscores with spaces
-  });
-  let noDuplicateErrors = [...new Set(errorPaths)]; // phone-related errors print twice
-  if (noDuplicateErrors.length === 1) {
-    return `Unable to complete your request due to invalid data in the ${noDuplicateErrors[0]} field. Please confirm your entry is correct and try again.`;
-  } else {
-    return `Unable to complete your request due to invalid data in the following fields: ${noDuplicateErrors.join(
-      ", "
-    )}. Please confirm your entries are correct and try again.`;
+// PUT an existing post
+router.put(
+  "/:postID/edit",
+  [body("content").notEmpty().escape()],
+  async (req, res) => {
+    const { postID } = req.params;
+    const changes = req.body;
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json(printErrors(errors.errors));
+    }
+
+    try {
+      // Check if the post exists
+      const post = await db("posts").where({ id: postID }).first();
+
+      if (!post) {
+        return res.status(404).json({
+          error_code: 404,
+          error_msg: `Cannot find post with ID ${postID}.`,
+        });
+      }
+
+      // Perform the update
+      await db("posts").where({ id: postID }).update({ likes: 1 });
+      res.status(200)
+        .send(`Successfully updated post details with the following data:
+      Content: ${post.content}
+      Hashtags: ${post.hashtags.keys}
+    `);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({
+        error_code: 500,
+        error_msg: `Failed to edit post with ID ${postID}.`,
+      });
+    }
   }
-}
+);
 
 export default router;
