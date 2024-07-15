@@ -156,4 +156,30 @@ router.put(
   }
 );
 
+// DELETE a post
+router.delete("/:postId", async (req, res) => {
+  const { postId } = req.params;
+  try {
+    // Check if the post exists
+    const post = await knex("posts").where({ id: postId }).first();
+
+    if (!post) {
+      return res.status(404).json({
+        error_code: 404,
+        error_msg: `Post with ID ${postId} not found.`,
+      });
+    }
+
+    // Delete the post
+    await knex("posts").where({ id: postId }).del();
+    res.status(204).send();
+  } catch (err) {
+    console.error(`Failed to DELETE post with ID ${postId}.`);
+    res.status(500).json({
+      error_code: 500,
+      error_msg: `Failed to DELETE post with ID ${postId}.`,
+    });
+  }
+});
+
 export default router;
